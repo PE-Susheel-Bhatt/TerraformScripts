@@ -1,4 +1,4 @@
-# **Azure Virtual Machine with FrontDoor.**
+# **Azure Kubernetes Service with FrontDoor.**
 ## This script creates resources based on below architecture :
 
 ![](AKS_Deployment.png) 

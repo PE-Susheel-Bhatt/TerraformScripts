@@ -1,7 +1,7 @@
-# **Azure Virtual Machine with FrontDoor.**
+# **Webapp with FrontDoor.**
 ## This script creates resources based on below architecture :
 
-![](VM.png)
+![](Webapp.png)
 
 ### **Assumptions in the architecture :**
 
