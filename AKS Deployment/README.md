@@ -11,7 +11,7 @@
 
 ### **Explanation**
 
-This code is parameterized and we are using different modules for every Azure Resource. This allows us to manage our code along with enabling the reusability. The parent directory **Linux Virtual Machine Deployment** contains two subfolders :
+This code is parameterized and we are using different modules for every Azure Resource. This allows us to manage our code along with enabling the reusability. The parent directory **AKS Deployment** contains two subfolders :
 
 1. terraform-modules
      * This directory contains all the modules.
@@ -24,9 +24,12 @@ This code is parameterized and we are using different modules for every Azure Re
 
 ### **Usage :**
 
+1. We are using Azure BLOB as backend configuration, so you need to ensure the storage account and container mentioned in the backend configuration exists.
+2. Since we are using data block to fetch key vault secrets, where we store all our sensitive information. The key vault and the secrets should already exist.
+
 To run this example, simply follow to steps below:
 
-1. Navigate to terraform-resources folder, if the terminal is opened in *Linux Virtual Machine Deployment* directory, use :
+1. Navigate to terraform-resources folder, if the terminal is opened in *AKS Deployment* directory, use :
 
 ``` 
   cd terraform-resources
@@ -46,3 +49,9 @@ To run this example, simply follow to steps below:
 1. Use Terraform workspaces for easier management of the deployments. This can also help us manage Dev, UAT and Production deployments instead of creating multiple state files\directories.
 2. If you are creating new resources\variables. Ensure naming convention is easily relatable, since we have a lot of variables in this code.
 3. Use conditionals to avoid unwanted surprises.
+
+### Points to be noted for this deployment :
+
+1. We are using identity as SystemAssigned. Please refer line 40 at *"terraform-modules/aks/main.tf"*. This can be changed to service principal if required, by uncommenting line 44 to 47.
+2. We are using BLOB as backend. You need to create a storage account and container as specified from line number 3 to 10 under *"terraform-resources/main.tf"*. Terraform state file will be stored in this container.
+3. Since we are using Key vault to store any sensitive information, you also need to create Key vault with the secrets defined as per terraform.tfvars file.

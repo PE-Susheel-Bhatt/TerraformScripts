@@ -41,10 +41,10 @@ resource "azurerm_kubernetes_cluster" "aks" {
     type = "SystemAssigned"
     }
     
-    service_principal {
-        client_id     = var.AKS_SPClientID
-        client_secret = var.AKS_ClientSecret
-    }
+    # service_principal {
+    #     client_id     = var.AKS_SPClientID
+    #     client_secret = var.AKS_ClientSecret
+    # }
     
     role_based_access_control {
         enabled = true

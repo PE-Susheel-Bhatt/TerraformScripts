@@ -24,6 +24,12 @@ This code is parameterized and we are using different modules for every Azure Re
 
 ### **Usage :**
 
+**Things to keep in mind are :**
+
+1. We are using Azure BLOB as backend configuration, so you need to ensure the storage account and container mentioned in the backend configuration exists.
+2. Since we are using data block to fetch key vault secrets, where we store all our sensitive information. The key vault and the secrets should already exist.
+3. This deployment is using password authentication. In case you plan on using SSH login, you need to edit line 51 on \terraform-modules\virtual_machine\main.tf and uncomment line 56 to 59.
+
 To run this example, simply follow to steps below:
 
 1. Navigate to terraform-resources folder, if the terminal is opened in *Linux Virtual Machine Deployment* directory, use :

@@ -1,11 +1,11 @@
 subscription_id = "aa01771c-5ab3-4809-b7e6-30c8080fc4ee"
 ## Pre Defined KV for storing secret
-devKV_Name         = "iac-test-kv"        #### We have to change as per env
+devKV_Name         = "iac-test-kv-east"        #### We have to change as per env
 akskv_SPClientID   = "spclientid"         ## SP Client ID - replace with created secret name
 akskv_SPClientSec  = "spclientsec"        ## SP Client Secret - replace with created secret name
 sqlkv_AdmUsrPasswd = "mysqladmuserpasswd" ## MySQL Server Admin user password - replace with created secret name
 ## VNET - SUBNET
-rg_Name            = "RG_EUS" ## We have to change as per env
+rg_Name            = "Demo_RG" ## We have to change as per env
 location           = "eastus2"
 vnet_Name          = "vnet-terraform-modulesdev-eus2"
 vnet_Address       = "178.29.212.0/22"
@@ -66,13 +66,13 @@ FD_BackendPoolHost            = "www.google.com"
 FD_BackendPoolHostAddress     = "www.google.com"
 
 ### Key Vault                  = ###
-keyvalut_Name = "kv-terraform-modulesdev-eus2-01"
+keyvalut_Name = "kv-dgc-tesdev-eus2-01"
 keyvalut_SKU  = "standard"
 
 
 ##
 ### For MySQL Server
-MySQLServer_Name          = "mysqlt-terraform-modulesdev-eus2"
+MySQLServer_Name          = "mysqlt-lesdev-eus2"
 MySQLServer_AdminUserName = "mysqladmin"
 #MySQLServer_AdminUserPasswd        = "" ## This should be fetched from KV
 MySQLServer_Version                 = "8.0"
@@ -85,7 +85,7 @@ MySQLServer_InfraEncryptionEnabled  = false
 MySQLServer_PubNetworkAccessEnabled = true
 MySQLServer_SSLEnforcementEnabled   = true
 MySQLServer_SSLVersion              = "TLS1_2"
-MySQLDB_Name                        = "terraform-modulesmysqldb"
+MySQLDB_Name                        = "terra-devsqldb"
 MySQLCharSet                        = "utf8"
 MySQlCollection                     = "utf8_unicode_ci"
 

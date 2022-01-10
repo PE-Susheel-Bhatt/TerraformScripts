@@ -73,14 +73,14 @@ module "acr" {
 ####### 3. AKS Deployment Code ###########
 
 # Retriving KV secret from KV for AKS SP.
-data "azurerm_key_vault_secret" "aks_sp_id" {
-  name         = var.akskv_SPClientID
-  key_vault_id = data.azurerm_key_vault.kv_name.id
-}
-data "azurerm_key_vault_secret" "aks_sp_sec" {
-  name         = var.akskv_SPClientSec
-  key_vault_id = data.azurerm_key_vault.kv_name.id
-}
+# data "azurerm_key_vault_secret" "aks_sp_id" {
+#   name         = var.akskv_SPClientID
+#   key_vault_id = data.azurerm_key_vault.kv_name.id
+# }
+# data "azurerm_key_vault_secret" "aks_sp_sec" {
+#   name         = var.akskv_SPClientSec
+#   key_vault_id = data.azurerm_key_vault.kv_name.id
+# }
 
 module "aks_cluster" {
   depends_on                = [module.vnet01.subnet]
@@ -237,7 +237,7 @@ module "sqlserver" {
   rg_Name       = var.rg_Name
   location      = var.location
   sql_version   = var.sql_version
-  sql_user      = data.azurerm_key_vault_secret.sql_admin_user.value
+  sql_user      = data.azurerm_key_vault_secret.sql_admin_user.value 
   sql_password  = data.azurerm_key_vault_secret.sql_admin_passwd.value
   mssqldb       = var.mssqldb
   #mssql_serverid      = module.sqlserver.id

@@ -5,13 +5,13 @@
 
 ### **Assumptions in the architecture :**
 
-1. We are using Azure Virtual Machines (IaaS architecture) 
+1. We are using Azure WebApp for application deployment. (PaaS architecture) 
 2. Application gateway is used for load balancing.
 3. This architecture has Azure Front Door component as well, this is considering global redundancy in the mind. We can use same piece of code and deploy resource on another region, whcih would allow us to use Front Door for regional DR.
 
 ### **Explanation**
 
-This code is parameterized and we are using different modules for every Azure Resource. This allows us to manage our code along with enabling the reusability. The parent directory **Linux Virtual Machine Deployment** contains two subfolders :
+This code is parameterized and we are using different modules for every Azure Resource. This allows us to manage our code along with enabling the reusability. The parent directory **WebApp Deployment** contains two subfolders :
 
 1. terraform-modules
      * This directory contains all the modules.
@@ -24,9 +24,15 @@ This code is parameterized and we are using different modules for every Azure Re
 
 ### **Usage :**
 
+**Things to keep in mind are :**
+
+1. We are using Azure BLOB as backend configuration, so you need to ensure the storage account and container mentioned in the backend configuration exists.
+2. Since we are using data block to fetch key vault secrets, where we store all our sensitive information. The key vault and the secrets should already exist.
+3. App service site config is configured using line number 22 to 26 under *"WebApp Deployment\terraform-modules\webapp\main.tf"* file. The application framework can be changed using these lines (ex: Java, Python, DotNet etc.)
+
 To run this example, simply follow to steps below:
 
-1. Navigate to terraform-resources folder, if the terminal is opened in *Linux Virtual Machine Deployment* directory, use :
+1. Navigate to terraform-resources folder, if the terminal is opened in *WebApp Deployment* directory, use :
 
 ``` 
   cd terraform-resources

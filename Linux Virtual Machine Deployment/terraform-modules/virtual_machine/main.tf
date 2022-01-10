@@ -53,6 +53,11 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
     azurerm_network_interface.vm_nic.id,
   ]
 
+  # admin_ssh_key {
+  #   username = var.vm_username
+  #   public_key = file("~/.ssh/id_rsa.pub")
+  # }
+
   source_image_reference {
     publisher = var.vm_image_publisher
     offer     = var.vm_image_offer
