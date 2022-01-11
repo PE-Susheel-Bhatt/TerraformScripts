@@ -1,7 +1,7 @@
-# **Azure Virtual Machine with FrontDoor.**
+# **Azure Virtual Machine Scale Set with FrontDoor.**
 ## This script creates resources based on below architecture :
 
-![](VM.png)
+![](VMSS.png)
 
 ### **Assumptions in the architecture :**
 
@@ -11,7 +11,7 @@
 
 ### **Explanation**
 
-This code is parameterized and we are using different modules for every Azure Resource. This allows us to manage our code along with enabling the reusability. The parent directory **Linux Virtual Machine Deployment** contains two subfolders :
+This code is parameterized and we are using different modules for every Azure Resource. This allows us to manage our code along with enabling the reusability. The parent directory **Virtual Machine Scale Set Deployment** contains two subfolders :
 
 1. terraform-modules
      * This directory contains all the modules.
@@ -31,7 +31,7 @@ This code is parameterized and we are using different modules for every Azure Re
 
 To run this example, simply follow to steps below:
 
-1. Navigate to terraform-resources folder, if the terminal is opened in *Linux Virtual Machine Deployment* directory, use :
+1. Navigate to terraform-resources folder, if the terminal is opened in *Virtual Machine Scale Set Deployment* directory, use :
 
 ``` 
   cd terraform-resources
