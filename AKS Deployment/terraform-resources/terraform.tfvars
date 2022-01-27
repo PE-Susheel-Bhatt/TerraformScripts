@@ -1,11 +1,11 @@
-subscription_id = "aa01771c-5ab3-4809-b7e6-30c8080fc4ee"
+subscription_id = "da74e3ed-9c9a-4605-8fae-10f3492c0f5c"
 ## Pre Defined KV for storing secret
-devKV_Name         = "iac-test-kv-east"        #### We have to change as per env
+devKV_Name         = "iac-test-coe"        #### We have to change as per env
 akskv_SPClientID   = "spclientid"         ## SP Client ID - replace with created secret name
 akskv_SPClientSec  = "spclientsec"        ## SP Client Secret - replace with created secret name
 sqlkv_AdmUsrPasswd = "mysqladmuserpasswd" ## MySQL Server Admin user password - replace with created secret name
 ## VNET - SUBNET
-rg_Name            = "Demo_RG" ## We have to change as per env
+rg_Name            = "CoE-Training" ## We have to change as per env
 location           = "eastus2"
 vnet_Name          = "vnet-terraform-modulesdev-eus2"
 vnet_Address       = "178.29.212.0/22"

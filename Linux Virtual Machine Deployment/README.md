@@ -32,7 +32,8 @@ This code is parameterized and we are using different modules for every Azure Re
 
 To run this example, simply follow to steps below:
 
-1. Navigate to terraform-resources folder, if the terminal is opened in *Linux Virtual Machine Deployment* directory, use :
+1. Open terraform.tfvars file under *terraform-resources* folder. And update the values that you would like to use.
+2. Open command prompt or powershell and navigate to terraform-resources folder, if the terminal is opened in *Linux Virtual Machine Deployment* directory, use :
 
 ``` 
   cd terraform-resources

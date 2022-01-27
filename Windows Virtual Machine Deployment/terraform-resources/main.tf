@@ -2,9 +2,9 @@
 terraform {
   backend "azurerm" {
     #   subscription_id       = "da74xxxx-9c9a-xxxx-8fae-xxxxxxxxxxxx"
-    subscription_id      = "aa01771c-5ab3-4809-b7e6-30c8080fc4ee"
-    resource_group_name  = "Terraform_Backend_RG"
-    storage_account_name = "terraformbackend02938" # Storage account used for backend
+    subscription_id      = "da74e3ed-9c9a-4605-8fae-10f3492c0f5c"
+    resource_group_name  = "CoE-Training"
+    storage_account_name = "terraformbackend938" # Storage account used for backend
     container_name       = "terraformstate"
     key                  = "terraform.tfstate" # Terraform State file
   }
@@ -132,6 +132,12 @@ module "storage_account" {
 }
 
 #######################################################
+
+data "azurerm_key_vault" "kv_name" {
+  name                = var.devKV_Name
+  resource_group_name = var.rg_Name
+}
+
 data "azurerm_key_vault_secret" "mysql_admin_sec" {
   name         = var.sqlkv_AdmUsrPasswd
   key_vault_id = data.azurerm_key_vault.kv_name.id
